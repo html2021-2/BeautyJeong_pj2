@@ -1,0 +1,91 @@
+@charset "utf-8";
+@import "_var", "_mixin", "_function";
+
+section{height: 100vh;}
+
+//.cnt1 공통
+.cnt1{
+    .txtwrap{
+        h3{font-family: Roboto;font-weight: 500;color: $dBlue;}
+        p{font-size: 20px;}
+    }
+}
+//pc
+#mCnt1{visibility: hidden;height: 0;overflow: hidden;}
+//#pcCnt1
+#pcCnt1{
+    .drag{position: absolute;top: -100px;left: -100px; z-index: 1;width: 100px;height: 100px;opacity: 0.8;}
+    .slick-wrapper{
+        position: relative;/* background: pink; */
+        &::before{content: "";position: absolute;top: 0;left: -595px; width: 1639px;height: 847px;border: 1px solid #707070;border-radius: 400px;}
+        .slide1::after, .slide2::after, .slide3::after{content: "";position: absolute;top: -30px;right: -50px;width: 766px;height: 766px;z-index: -1;}
+        .slide1, .slide3{
+            &::after{background: url("../images/main/p-circle766-yellow.jpg");}
+        }
+        .slide2{
+            &::after{background: url("../images/main/p-circle766-blue.jpg");}
+        }
+    }
+    .slick-slide{
+        @include flex;
+        @include justify-content(space-between);
+        @include align-items;
+    }
+    .txtwrap{
+        margin-right: 140px;
+        h3{font-size: 100px;}
+        p{padding: 13px 0;line-height: 40px;}
+    }
+    .apptxt{margin-right: 325px;}
+    .slick-dots li{
+        width: 20px;height: 20px;background: #f2cb05;box-shadow: 5px 0 15px 0 #f2cb05;border-radius: 50%;opacity: 0.3;cursor: pointer;
+        position: absolute;
+        &::after{font-size: 25px;opacity: 0.5;position: absolute;top: 20px;width: 150px;}
+        &:nth-child(1){
+            top: 217px;left: 936px;
+            &::after{content: "IKEA Lab";left: -5px;}
+        }
+        &:nth-child(2){
+            top: 50%;left: 1035px;
+            &::after{content: "IKEA App";left: -20px;}
+        }
+        &:nth-child(3){
+            bottom: 195px;left: 986px;
+            &::after{content: "Sustainability";left: -20px;}
+        }
+        &.slick-active{opacity: 1;}
+    }
+    .slick-dots li button{opacity: 0;}
+}
+
+//태블릿
+@media screen and (max-width: 768px) {
+    #pcCnt1{display: none;}
+    #mCnt1{visibility: visible;height: 100vh;overflow: visible;}
+    //mCnt1
+    #mCnt1{
+        .slick-wrapper, .slide_bg{/* background: pink; */height: 100vh;width: 100%;}
+        .slick-slide{
+            position: relative;height: 100vh;
+            ::before{
+                content: "";position: absolute;top: 0;left: 0;height: 100vh;width: 100%;background: no-repeat 50% / cover;
+                /* &:nth-child(1){ background-image: url("../images/main/m-cnt1-bg1.jpg");}
+                &:nth-child(2){ background-image: url("../images/main/m-cnt1-bg2.jpg");background-position: 15% 60%;}
+                &:nth-child(3){ background-image: url("../images/main/m-cnt1-bg3.jpg");background-position: 15% 50%;} */
+            }
+            &:nth-child(1)::before{ background-image: url("../images/main/m-cnt1-bg1.jpg");}
+            &:nth-child(2)::before{ background-image: url("../images/main/m-cnt1-bg2.jpg");background-position: 15% 60%;}
+            &:nth-child(3)::before{ background-image: url("../images/main/m-cnt1-bg3.jpg");background-position: 15% 50%;}
+        }
+        svg{
+            position: relative;
+            polygon{position: absolute;top: 0;left: 0; background: #5B5B5B;opacity: 0.8;}
+        }
+            
+        .txtwrap{
+            position: absolute;top: 423px;left: 99px;z-index: 100;
+            h3{font-size: 60px;color: $yellow;margin-bottom: 24px;}
+            p{font-size: 20px;line-height: 35px;text-align: left;color: #fff;}
+        }
+    }
+}

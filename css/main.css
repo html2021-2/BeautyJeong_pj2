@@ -1,0 +1,163 @@
+section {
+  height: 100vh; }
+
+.cnt1 .txtwrap h3 {
+  font-family: Roboto;
+  font-weight: 500;
+  color: #0e4970; }
+.cnt1 .txtwrap p {
+  font-size: 20px; }
+
+#mCnt1 {
+  visibility: hidden;
+  height: 0;
+  overflow: hidden; }
+
+#pcCnt1 .drag {
+  position: absolute;
+  top: -100px;
+  left: -100px;
+  z-index: 1;
+  width: 100px;
+  height: 100px;
+  opacity: 0.8; }
+#pcCnt1 .slick-wrapper {
+  position: relative;
+  /* background: pink; */ }
+  #pcCnt1 .slick-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -595px;
+    width: 1639px;
+    height: 847px;
+    border: 1px solid #707070;
+    border-radius: 400px; }
+  #pcCnt1 .slick-wrapper .slide1::after, #pcCnt1 .slick-wrapper .slide2::after, #pcCnt1 .slick-wrapper .slide3::after {
+    content: "";
+    position: absolute;
+    top: -30px;
+    right: -50px;
+    width: 766px;
+    height: 766px;
+    z-index: -1; }
+  #pcCnt1 .slick-wrapper .slide1::after, #pcCnt1 .slick-wrapper .slide3::after {
+    background: url("../images/main/p-circle766-yellow.jpg"); }
+  #pcCnt1 .slick-wrapper .slide2::after {
+    background: url("../images/main/p-circle766-blue.jpg"); }
+#pcCnt1 .slick-slide {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  align-items: center; }
+#pcCnt1 .txtwrap {
+  margin-right: 140px; }
+  #pcCnt1 .txtwrap h3 {
+    font-size: 100px; }
+  #pcCnt1 .txtwrap p {
+    padding: 13px 0;
+    line-height: 40px; }
+#pcCnt1 .apptxt {
+  margin-right: 325px; }
+#pcCnt1 .slick-dots li {
+  width: 20px;
+  height: 20px;
+  background: #f2cb05;
+  box-shadow: 5px 0 15px 0 #f2cb05;
+  border-radius: 50%;
+  opacity: 0.3;
+  cursor: pointer;
+  position: absolute; }
+  #pcCnt1 .slick-dots li::after {
+    font-size: 25px;
+    opacity: 0.5;
+    position: absolute;
+    top: 20px;
+    width: 150px; }
+  #pcCnt1 .slick-dots li:nth-child(1) {
+    top: 217px;
+    left: 936px; }
+    #pcCnt1 .slick-dots li:nth-child(1)::after {
+      content: "IKEA Lab";
+      left: -5px; }
+  #pcCnt1 .slick-dots li:nth-child(2) {
+    top: 50%;
+    left: 1035px; }
+    #pcCnt1 .slick-dots li:nth-child(2)::after {
+      content: "IKEA App";
+      left: -20px; }
+  #pcCnt1 .slick-dots li:nth-child(3) {
+    bottom: 195px;
+    left: 986px; }
+    #pcCnt1 .slick-dots li:nth-child(3)::after {
+      content: "Sustainability";
+      left: -20px; }
+  #pcCnt1 .slick-dots li.slick-active {
+    opacity: 1; }
+#pcCnt1 .slick-dots li button {
+  opacity: 0; }
+
+@media screen and (max-width: 768px) {
+  #pcCnt1 {
+    display: none; }
+
+  #mCnt1 {
+    visibility: visible;
+    height: 100vh;
+    overflow: visible; }
+
+  #mCnt1 .slick-wrapper, #mCnt1 .slide_bg {
+    /* background: pink; */
+    height: 100vh;
+    width: 100%; }
+  #mCnt1 .slick-slide {
+    position: relative;
+    height: 100vh; }
+    #mCnt1 .slick-slide ::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100%;
+      background: no-repeat 50% / cover;
+      /* &:nth-child(1){ background-image: url("../images/main/m-cnt1-bg1.jpg");}
+      &:nth-child(2){ background-image: url("../images/main/m-cnt1-bg2.jpg");background-position: 15% 60%;}
+      &:nth-child(3){ background-image: url("../images/main/m-cnt1-bg3.jpg");background-position: 15% 50%;} */ }
+    #mCnt1 .slick-slide:nth-child(1)::before {
+      background-image: url("../images/main/m-cnt1-bg1.jpg"); }
+    #mCnt1 .slick-slide:nth-child(2)::before {
+      background-image: url("../images/main/m-cnt1-bg2.jpg");
+      background-position: 15% 60%; }
+    #mCnt1 .slick-slide:nth-child(3)::before {
+      background-image: url("../images/main/m-cnt1-bg3.jpg");
+      background-position: 15% 50%; }
+  #mCnt1 svg {
+    position: relative; }
+    #mCnt1 svg polygon {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: #5B5B5B;
+      opacity: 0.8; }
+  #mCnt1 .txtwrap {
+    position: absolute;
+    top: 423px;
+    left: 99px;
+    z-index: 100; }
+    #mCnt1 .txtwrap h3 {
+      font-size: 60px;
+      color: #F2CB05;
+      margin-bottom: 24px; }
+    #mCnt1 .txtwrap p {
+      font-size: 20px;
+      line-height: 35px;
+      text-align: left;
+      color: #fff; } }
+
+/*# sourceMappingURL=main.css.map */

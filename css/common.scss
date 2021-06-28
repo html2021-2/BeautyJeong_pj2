@@ -1,0 +1,103 @@
+@charset "utf-8";
+@import "_var", "_mixin", "_function";
+
+//web font
+@font-face {
+  font-family: NotoSansKR;
+  font-style: normal;
+  font-weight: 500;
+  src: url("../fonts/Noto_Sans_KR/NotoSansKR-Medium.eot");
+  src: local("Noto Sans KR"),
+      url("../fonts/Noto_Sans_KR/NotoSansKR-Medium.eot?#iefix") format("embedded-opentype"),
+     url("../fonts/Noto_Sans_KR/NotoSansKR-Medium.woff2") format("woff2"),
+     url("../fonts/Noto_Sans_KR/NotoSansKR-Medium.woff") format("woff"),
+     url("../fonts/Noto_Sans_KR/NotoSansKR-Medium.otf") format("opentype"),
+     url("../fonts/Noto_Sans_KR/NotoSansKR-Medium.svg#NotoSansKR") format('svg');
+}
+@font-face {
+  font-family: NotoSansKR;
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/Noto_Sans_KR/NotoSansKR-Bold.eot");
+  src: local("Noto Sans KR"),
+      url("../fonts/Noto_Sans_KR/NotoSansKR-Bold.eot?#iefix") format("embedded-opentype"),
+     url("../fonts/Noto_Sans_KR/NotoSansKR-Bold.woff2") format("woff2"),
+     url("../fonts/Noto_Sans_KR/NotoSansKR-Bold.woff") format("woff"),
+     url("../fonts/Noto_Sans_KR/NotoSansKR-Bold.otf") format("opentype"),
+     url("../fonts/Noto_Sans_KR/NotoSansKR-Bold.svg#NotoSansKR") format('svg');
+}
+@font-face {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/Roboto/Roboto-Regular.eot");
+  src: local("Roboto"),
+      url("../fonts/Roboto/Roboto-Regular.eot?#iefix") format("embedded-opentype"),
+     url("../fonts/Roboto/Roboto-Regular.woff2") format("woff2"),
+     url("../fonts/Roboto/Roboto-Regular.woff") format("woff"),
+     url("../fonts/Roboto/Roboto-Regular.ttf") format("truetype"),
+     url("../fonts/Roboto/Roboto-Regular.svg#Roboto") format('svg');
+}
+@font-face {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  src: url("../fonts/Roboto/Roboto-Medium.eot");
+  src: local("Roboto"),
+      url("../fonts/Roboto/Roboto-Medium.eot?#iefix") format("embedded-opentype"),
+     url("../fonts/Roboto/Roboto-Medium.woff2") format("woff2"),
+     url("../fonts/Roboto/Roboto-Medium.woff") format("woff"),
+     url("../fonts/Roboto/Roboto-Medium.ttf") format("truetype"),
+     url("../fonts/Roboto/Roboto-Medium.svg#Roboto") format('svg');
+}
+
+//tag reset
+body, h1, h2, h3, h4, h5, h6, p, ul, button, input{margin: 0;padding: 0;}
+h1, h2, h3, h4, h5, h6{font-size: 100%;}
+ul{list-style: none;}
+button{font-family: inherit;font-size: inherit;color: inherit;background: none;border: none;cursor: pointer;}
+img{border: none;vertical-align: top;}
+address{font-style: normal;}
+a:link, a:visited, a:hover, a:active{text-decoration: none;color: inherit;}
+header, nav, section, footer{display: block;}
+
+//common class
+.f_1{float: left;}
+.f_r{float: right;}
+.clearfix::after{content: "";display: block;clear: both;}
+.p_r{position: relative;}
+.p_a{position: absolute;}
+.blind{width: 1px;height: 1px;border: none;overflow: hidden;position: absolute;clip: rect(1px, 1px, 1px, 1px);clip-path: inset(50%);}
+
+//btn_more
+.btn_more{
+  position: relative;display: inline-block;text-align: center;font-family: Roboto;font-weight: 500;
+  &::after{content: "";position: absolute;top: 6px;left: 10px;width: 5px;height: 9px; background: url("../images/main/more-arrow.png");}
+  &.yellow{width: 80px;height: 21px;padding: 4px 6px 4px 16px;border-radius: 9px; background: $yellow;font-size: 12px;}
+  &.white{width: 146px;height: 52px;padding: 14px 22px 14px 33px; border-radius: 26px;background: #fff;font-size: 20px;}
+}
+.arrowleft{background: url("../images/main/yellowLeft-arrow.png");width: 20px;height: 21px;}
+.arrowright{background: url("../images/main/yellowRight-arrow.png");width: 20px;height: 21px;}
+
+//btn_top
+
+//skip navigation
+#skip a{
+    position: absolute;top: 0;left: -9999px;z-index: 1000;
+    &:focus{left: 0;width: 100%;height: 50px;line-height: 50px;color: $dBlue;background: $yellow;font-weight: 700;text-align: center;}
+}
+
+body{font-family: NotoSansKR, Roboto, sans-serif;font-size: 16px;color: $dGray;line-height: 1;font-weight: 500;word-break: keep-all;letter-spacing: normal;
+    *{box-sizing: border-box;}
+}
+
+//태블릿
+@media screen and (max-width: 768px) {
+
+}
+
+//모바일
+@media screen and (max-width: 414px) {
+
+}
+

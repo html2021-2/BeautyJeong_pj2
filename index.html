@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> IKEA KOREA </title>
+    <link rel="apple-touch-icon" href="">
+    <link rel="shortcut icon" href="">
+    <link rel="icon" href="images/favicon.ico">
+
+    <link rel="stylesheet" href="css/swiper-bundle.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/layout.css"><!-- header, footer -->
+    <link rel="stylesheet" href="css/main.css">
+
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/gsap.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/main.js"></script>
+</head>
+
+<body>
+    <div id="skip">
+        <a href="#cnt1">본문 바로가기</a>
+    </div>
+    <div id="wrap">
+        <header id="pcHeader" class="header">
+            <h1 class="logo">
+                <a href="index.html"><img src="images/common/ikea-logo.svg" alt="이케아"></a>
+            </h1>
+            <div class="header_right">
+                <div class="lang">
+                    <button type="button">
+                        <!-- 화살표: 가상요소의 배경으로 -->
+                        Language
+                    </button>
+                    <ul>
+                        <li><a href="" aria-current="page">Korean</a></li>
+                        <li><a href="">English</a></li>
+                    </ul>
+                </div>
+                <ul class="header_icon">
+                    <li>
+                        <button>
+                            <img src="images/common/p-header-search.png" alt="검색창 열기">
+                        </button>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="images/common/p-header-login.png" alt="로그인">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="images/common/header-shoppingCart.png" alt="장바구니">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <nav id="pcGnb">
+                <!-- 흰배경은 가상요소로 -->
+                <ul>
+                    <li>
+                        <a href="">IKEA</a>
+                        <div class="dep2">
+                            <div class="menu_tit">이케아</div>
+                            <ul class="dep2_cnt">
+                                <li>
+                                    <a href="">이케아 코리아 소개</a>
+                                </li>
+                                <li>
+                                    <a href="">비전과 경영철학</a>
+                                </li>
+                                <li>
+                                    <a href="">이케아 역사</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="">COMMUNITY</a>
+                        <div class="dep2">
+                            <div class="menu_tit">커뮤니티</div>
+                            <ul class="dep2_cnt">
+                                <li>
+                                    <a href="">이케아 라이브</a>
+                                </li>
+                                <li>
+                                    <a href="">아이디어</a>
+                                    <ul class="dep3">
+                                        <li><a href="">이케아 아이디어</a></li>
+                                        <li><a href="">우리집 아이디어</a></li>
+                                        <li><a href="">인스타그램 자랑</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="">STORE</a>
+                        <div class="dep2">
+                            <div class="menu_tit">스토어</div>
+                            <ul class="dep2_cnt">
+                                <li>
+                                    <a href="">가구</a>
+                                    <ul class="dep3">
+                                        <li><a href="">가구세트</a></li>
+                                        <li><a href="">침실가구</a></li>
+                                        <li><a href="">드레스룸</a></li>
+                                        <li><a href="">주방가구</a></li>
+                                        <li><a href="">서재가구</a></li>
+                                        <li><a href="">어린이가구</a></li>
+                                        <li><a href="">수납가구</a></li>
+                                        <li><a href="">화장대/거울</a></li>
+                                        <li><a href="">식탁/테이블</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="">홈스마트</a>
+                                </li>
+                                <li>
+                                    <a href="">홈데코/조명</a>
+                                </li>
+                                <li>
+                                    <a href="">가전</a>
+                                </li>
+                                <li>
+                                    <a href="">이케아 푸드</a>
+                                </li>
+                                <li>
+                                    <a href="">반려동물</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="">SHOWROOM</a>
+                        <div class="dep2">
+                            <div class="menu_tit">쇼룸</div>
+                            <ul class="dep2_cnt">
+                                <li>
+                                    <a href="">침실</a>
+                                </li>
+                                <li>
+                                    <a href="">거실</a>
+                                </li>
+                                <li>
+                                    <a href="">주방</a>
+                                </li>
+                                <li>
+                                    <a href="">다이닝</a>
+                                </li>
+                                <li>
+                                    <a href="">어린이 이케아</a>
+                                </li>
+                                <li>
+                                    <a href="">욕실</a>
+                                </li>
+                                <li>
+                                    <a href="">홈오피스</a>
+                                </li>
+                                <li>
+                                    <a href="">현관</a>
+                                </li>
+                                <li>
+                                    <a href="">아웃도어</a>
+                                </li>
+                                <li>
+                                    <a href="">비즈니스</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="">IKEA FAMILY</a>
+                    </li>
+                </ul>
+                <!-- 배너 슬라이더 -->
+                <div class="swiper-container">
+                    <!-- 슬라이더 상세 내용 그룹 -->
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide slide1">
+                            <a href=""><img src="images/common/banner-sale.jpg" alt=""></a>
+                            <div class="txtbox">
+                                <strong>
+                                    미드솜마르,<br>
+                                    최대<span>70%</span>세일<br>
+                                    빛나는 여름!<br>
+                                    반가운 특가!<br>
+                                </strong>
+                                <p>6월 17일 - 7월 6일</p>
+                                <a href="">미드솜마르 즐기러 가기 </a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide slide2">
+                            <a href=""><img src="images/common/banner-ikeaFamily.jpg" alt=""></a>
+                            <div class="txtbox">
+                                <strong>IKEA Family</strong>
+                                <p>이케아 패밀리가 되어보세요.</p>
+                                <a href="">IKEA Family 혜택보기 </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-pagination"></div>
+                    <div id="cursorDrag"><img src="images/common/cursor-drag.png" alt=""></div>
+                </div>
+            </nav>
+        </header>
+
+        <header id="mHeader" class="header">
+            <h1 class="logo">
+                <a href="index.html"><img src="images/common/ikea-logo.svg" alt="이케아"></a>
+            </h1>
+            <div class="header_right">
+                <ul class="header_icon">
+                    <li>
+                        <button>
+                            <img src="images/common/m-header-earch.png" alt="검색창 열기">
+                        </button>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="images/common/m-header-login.png" alt="로그인">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <button class="btn_gnb_open" type="button">
+                <img src="images/common/m-header-menu-btn.png" alt="전체메뉴 열기">
+            </button>
+
+        </header>
+
+        <div id="container">
+            <section id="pcCnt1" class="cnt1">
+                <h2 class="blind">이케아 소개</h2>
+                <!-- Slider main container -->
+                <div class="slick-container">
+                    <!-- Additional required wrapper -->
+                    <div class="slick-wrapper"><!-- 가상요소: 둥근원 -->
+                        <!-- Slides -->
+                        <div class="slick-slide slide1">
+                            <div class="slide_bg">
+                                <img src="images/main/p-cnt1-bg1.png" alt="">
+                            </div>
+                            <div class="txtwrap">
+                                <h3>IKEA Lab</h3>
+                                <p>내가 그리던 공간을 혼자 고민하지말고 IKEA와 함께 시작해보세요.<br>
+                                    전문가와 함께하는 홈퍼니싱 컨설팅 서비스가 첫 1시간 무료 제공됩니다.</p>
+                                <a href="" class="btn_more yellow">view more</a>
+                            </div>
+                        </div>
+                        <div class="slick-slide slide2">
+                            <div class="slide_bg">
+                                <img src="images/main/p-cnt1-bg2.png" alt="">
+                            </div>
+                            <div class="txtwrap apptxt">
+                                <h3>IKEA App</h3>
+                                <p>밖으로 나가기 어려워지는 시기인 만큼,<br>
+                                    집에서 쉽고 안전하게 쇼핑하는 방법을 알아볼까요?</p>
+                                <a href="" class="btn_more yellow">view more</a>
+                            </div>
+                        </div>
+                        <div class="slick-slide slide3">
+                            <div class="slide_bg">
+                                <img src="images/main/p-cnt1-bg3.png" alt="">
+                            </div>
+                            <div class="txtwrap">
+                                <h3>Sustainability</h3>
+                                <p>IKEA는 쓰레기를 없애고 자원을 계속 사용하기 위해<br>
+                                    모두가 더 편하게 실천할 수 있는 새로운 방법을 찾고 있습니다.</p>
+                                <a href="" class="btn_more yellow">view more</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="slick-pagination"></div>
+                </div>
+                <div class="drag"><img src="images/common/cursor-drag.png" alt=""></div>
+            </section>
+
+            <section id="mCnt1" class="cnt1">
+                <h2 class="blind">이케아 소개</h2>
+                <div class="slick-container">
+                    <!-- Additional required wrapper -->
+                    <div class="slick-wrapper"><!-- 가상요소: 둥근원 -->
+                        <!-- Slides -->
+                        <div class="slick-slide slide1">
+                            <div class="txtwrap">
+                                <h3>IKEA Lab</h3>
+                                <p>내가 그리던 공간을 혼자<br>고민하지말고 IKEA와 함께<br> 시작해보세요.<br>
+                                    <br>
+                                    전문가와 함께하는 <br>홈퍼니싱 컨설팅 서비스가<br> 첫 1시간 무료 제공됩니다.</p>
+                                <a href="" class="arrowright"></a>
+                            </div>
+                            <svg width="643" height="1024">
+                                <polygon points="0 0, 0 1024, 643 1024, 265 0"/>
+                            </svg>
+                        </div>
+                        <div class="slick-slide slide2">
+                            <div class="txtwrap apptxt">
+                                <h3>IKEA App</h3>
+                                <p>밖으로 나가기 어려워지는 시기인 만큼,<br>
+                                    집에서 쉽고 안전하게 쇼핑하는 방법을 알아볼까요?</p>
+                                <a href="" class="arrowright"></a>
+                            </div>
+                            <svg width="643" height="1024">
+                                <polygon points="0 0, 0 1024, 643 1024, 265 0"/>
+                            </svg>
+                        </div>
+                        <div class="slick-slide slide3">
+                            <div class="txtwrap">
+                                <h3>Sustainability</h3>
+                                <p>IKEA는 쓰레기를 없애고 자원을 계속 사용하기 위해<br>
+                                    모두가 더 편하게 실천할 수 있는 새로운 방법을 찾고 있습니다.</p>
+                                <a href="" class="arrowright"></a>
+                            </div>
+                            <svg width="643" height="1024">
+                                <polygon points="0 0, 0 1024, 333 1024, 643 0"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="controller">
+                        <div class="slick-pagination"></div>
+                        <div class="slick-auto">
+                            <button type="button" class="slick-pause visible">
+                                <span class="blind">일시정지</span>
+                                <i class="xi-play-circle"></i>
+                            </button>
+                            <button type="button" class="slick-play">
+                                <span class="blind">자동실행</span>
+                                <i class="xi-pause-circle"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <section id="cnt2"></section>
+
+            <section id="cnt3"></section>
+
+            <section id="cnt4"></section>
+
+            <section id="cnt5"></section>
+        </div>
+
+        <footer id="footer">
+            <div class="ft_body">
+                <div class="ft_inner">
+                    <div class="inner_top">
+                        <p class="ft_logo">IKEA</p>
+                        <div class="ft_menu">
+                            <ul>
+                                <li><a href="">IKEA</a></li>
+                                <li><a href="">COMMUNITY</a></li>
+                                <li><a href="">STORE</a></li>
+                                <li><a href="">SHOWROOM</a></li>
+                                <li><a href="">IKEA FAMILY</a></li>
+                            </ul>
+                            <ul>
+                                <li><a href="">고객문의</a></li>
+                                <li><a href="">매장</a></li>
+                                <li><a href="">IKEA 서비스</a></li>
+                                <li><a href="">이용약관</a></li>
+                                <li><a href="">개인정보 처리방침</a></li>
+                            </ul>
+                            <ul>
+                                <li><a href="" target="_blank">Facebook</a></li>
+                                <li><a href="" target="_blank">Instagram</a></li>
+                                <li><a href="" target="_blank">YouTube</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="inner_bottom">
+                        <address>
+                            IKEA 코리아<br>
+                            주소 : (우) 14352 경기도 광명시 일직로 17 IKEA광명점<br>
+                            사업자 등록번호 : 106-86-82871 사업자정보확인<br>
+                            대표자 : 프레드릭 요한손<br>
+                            통신판매업 신고 : 2018-경기광명-0209<br>
+                            TEL : 1670-4532
+                        </address>
+                    </div>
+                    <div class="ft_bg"></div>
+                </div>
+                <a href="#header" class="btn_top"></a>
+            </div>
+            <div class="ft_bottom">
+                <div class="ft_inner">
+                    <p>&copy; IKEA</p>
+                    <p>고객센터 <span>1670-4532</span></p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+</body>
+
+</html>
