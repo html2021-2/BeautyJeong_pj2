@@ -12,18 +12,25 @@
         }
     }
 }
+.header.on{background: #fff;}
 
 //pcHeader(1920)
  #mHeader{visibility: hidden;height: 0;overflow: hidden;}
  #pcHeader{
-    position: relative; width: 100%;
+    position: fixed; width: 100%;z-index: 1000;
+    //뎁스2 흰배경
+    &.active::before{
+        /* visibility: hidden;overflow: hidden;max-height: 0; */
+        content: "";position: absolute;top: 90px;left: 0;width: 100%;height: 460px;background: yellow;border-top: 1px solid #707070;border-bottom: 1px solid #707070;
+    }
+    
     .logo{
         @include flex;
         @include align-items;
         margin-left: 340px;
     }
     .lang{
-        position: relative;margin-right: 64px;width: 85px;font-family: Roboto;font-weight: 400;font-size: 14px;
+        position: relative;margin-right: 64px;width: 85px;font-family: Roboto;font-weight: 400;font-size: 14px;height: 31px;
         button{
             position: relative;width: 100%;height: 19px;line-height: 19px;line-height: 0.75;text-align: left;
             &::after{
@@ -31,35 +38,52 @@
             }
         }
         ul{
-            position: absolute;top: 31px;left: 0;width: 100%;border-top: 2px solid $lBlue; text-align: center;padding: 15px 20px;background: #fff;visibility: hidden;overflow: hidden;max-height: 0;
-            li{line-height: 2;color: $lGray;}
+            display: none;
+            position: absolute;top: 31px;left: 0;width: 100%;border-top: 2px solid $lBlue; text-align: center;padding: 15px 20px;background: #eee;
+            li{
+                line-height: 2;color: $lGray;
+                &:hover a, & a:focus{color: $dBlue;font-weight: 500;}
+            }
         }
     }
     .header_right{
         @include flex;
         @include align-items;
-        position: absolute;top: 0;right: 340px;height: 100%;
+        position: absolute;top: 0;right: 340px;height: 100%;background: transparent;
     }
 
     #pcGnb{
-        //뎁스2 흰배경
-        &::before{
-            visibility: hidden;overflow: hidden;max-height: 0;
-            content: "";position: absolute;top: 90px;left: 0;width: 100%;height: 460px;background: #fff;border-top: 1px solid #707070;border-bottom: 1px solid #707070;
-        }
         > ul{
             @include flex;
             padding-left: 40px;
             > li{
-                margin-right: 60px;;
-                > a{display: block;width: 100%; height: 90px;line-height: 90px;font-family: Roboto;font-weight: 400;border-bottom: 3px solid transparent;}
-                & > a:hover, & > a:focus, &.on > a{border-bottom-color: $lBlue;font-weight: 500;color: $dBlue;}
+                margin-right: 45px;
+                > a{
+                    position: relative; display: block;height: 91px;line-height: 90px;font-family: Roboto;font-weight: 400;text-align: center;z-index: 10;
+                    &::before, &::after{content: "";position: absolute;}
+                    &::before{bottom: 7px;width: 100%;height: 3px;background: transparent;}
+                    &::after{
+                        @include translateX-50;
+                        width: 1px;height: 8px; border-bottom: 8px solid transparent;border-right: 6px solid transparent;border-left: 6px solid transparent;bottom: 10px;left: 50%;
+                    }
+                }
+                &:nth-child(1) a{width: 39px;}
+                &:nth-child(2) a{width: 100px;}
+                &:nth-child(3) a{width: 55px;}
+                &:nth-child(4) a{width: 97px;}
+                &:nth-child(5) a{width: 97px;}
+                & > a:hover, & > a:focus, &.on > a{
+                    border-bottom-color: $lBlue;font-weight: 500;color: $dBlue;
+                    &::before{background: $lBlue;}
+                    &::after{border-bottom-color: $lBlue;}
+                }
             }
         }
         .dep2{
-            visibility: hidden;overflow: hidden;max-height: 0;
+            display: none;
+            // visibility: hidden;overflow: hidden;max-height: 0;
             @include flex;
-            position: absolute;top: 91px;left: 0;width: 50%;height: 460px;padding: 55px 0; background: #fff;font-size: 18px; visibility: hidden;overflow: hidden;max-height: 0;
+            position: absolute;top: 91px;left: 0;width: 50%;height: 460px;padding: 55px 0; background: #fff;font-size: 18px;
             .menu_tit{margin-left: 340px;padding-right: 40px;border-right: 1px solid $lGray;color: $dBlue;}
             .dep2_cnt{
                 position: relative; padding-left: 40px;border-right: 1px solid $lGray;color: $lGray;
@@ -73,17 +97,22 @@
                 }
             }
         }
-        .dep2.on{visibility: visible;max-height: 460px;}
-        .dep3{
+        li.on .dep2{display: block;}
+        // li.on .dep2{visibility: visible;max-height: 460px;}
+        ul li ul li .dep3{
+            display: none;
+            // visibility: hidden;overflow: hidden;max-height: 0;
             position: absolute;top: 0;right: -100%;width: 100%;height: 100%;padding-left: 20px;border-right: 1px solid $lGray;
             li + li{margin-top: 20px;}
             li > a:hover, li > a:focus{color: $dGray;}
         }
+        ul li ul li.on .dep3{display: block;}
+        // ul li ul li.on .dep3{visibility: visible;max-height: 460px;}
 
         //banner: swiper slider
         #cursorDrag{position: absolute;z-index: 1000;}
         .swiper-container{
-            visibility: hidden;overflow: hidden;max-height: 0;
+           /*  visibility: hidden;overflow: hidden;max-height: 0; */
             position: absolute;top: 91px;right: 0px;width: 50%;height: 460px;z-index: 800;
             .swiper-pagination{
                 bottom: 70px;left: -150px;

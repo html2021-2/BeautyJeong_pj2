@@ -12,6 +12,7 @@
 
     <link rel="stylesheet" href="css/swiper-bundle.css">
     <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/xeicon.css">
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/layout.css"><!-- header, footer -->
     <link rel="stylesheet" href="css/main.css">
@@ -65,7 +66,7 @@
 
             <nav id="pcGnb">
                 <!-- 흰배경은 가상요소로 -->
-                <ul>
+                <ul class="dep1">
                     <li>
                         <a href="">IKEA</a>
                         <div class="dep2">
@@ -241,11 +242,8 @@
         <div id="container">
             <section id="pcCnt1" class="cnt1">
                 <h2 class="blind">이케아 소개</h2>
-                <!-- Slider main container -->
                 <div class="slick-container">
-                    <!-- Additional required wrapper -->
                     <div class="slick-wrapper"><!-- 가상요소: 둥근원 -->
-                        <!-- Slides -->
                         <div class="slick-slide slide1">
                             <div class="slide_bg">
                                 <img src="images/main/p-cnt1-bg1.png" alt="">
@@ -281,18 +279,16 @@
                         </div>
                     </div>
 
-                    <div class="slick-pagination"></div>
+                    <div class="pc-slick-pagination"></div>
                 </div>
-                <div class="drag"><img src="images/common/cursor-drag.png" alt=""></div>
+                <div class="cursorDrag"><img src="images/main/p-cursor-click.png" alt=""></div>
             </section>
 
             <section id="mCnt1" class="cnt1">
                 <h2 class="blind">이케아 소개</h2>
                 <div class="slick-container">
-                    <!-- Additional required wrapper -->
-                    <div class="slick-wrapper"><!-- 가상요소: 둥근원 -->
-                        <!-- Slides -->
-                        <div class="slick-slide slide1">
+                    <div class="slick-wrapper">
+                        <div class="slick-slide slide1"><!-- 가상요소: 배경이미지 -->
                             <div class="txtwrap">
                                 <h3>IKEA Lab</h3>
                                 <p>내가 그리던 공간을 혼자<br>고민하지말고 IKEA와 함께<br> 시작해보세요.<br>
@@ -300,44 +296,44 @@
                                     전문가와 함께하는 <br>홈퍼니싱 컨설팅 서비스가<br> 첫 1시간 무료 제공됩니다.</p>
                                 <a href="" class="arrowright"></a>
                             </div>
-                            <svg width="643" height="1024">
+                            <svg>
                                 <polygon points="0 0, 0 1024, 643 1024, 265 0"/>
                             </svg>
                         </div>
                         <div class="slick-slide slide2">
                             <div class="txtwrap apptxt">
                                 <h3>IKEA App</h3>
-                                <p>밖으로 나가기 어려워지는 시기인 만큼,<br>
-                                    집에서 쉽고 안전하게 쇼핑하는 방법을 알아볼까요?</p>
+                                <p>밖으로 나가기 <br>어려워지는 시기인 만큼,<br>
+                                    집에서 쉽고 안전하게 <br>쇼핑하는 방법을 알아볼까요?</p>
                                 <a href="" class="arrowright"></a>
                             </div>
-                            <svg width="643" height="1024">
+                            <svg>
                                 <polygon points="0 0, 0 1024, 643 1024, 265 0"/>
                             </svg>
                         </div>
                         <div class="slick-slide slide3">
                             <div class="txtwrap">
                                 <h3>Sustainability</h3>
-                                <p>IKEA는 쓰레기를 없애고 자원을 계속 사용하기 위해<br>
-                                    모두가 더 편하게 실천할 수 있는 새로운 방법을 찾고 있습니다.</p>
+                                <p>IKEA는 쓰레기를 없애고<br> 자원을 계속 사용하기 위해<br>
+                                    모두가 더 편하게 <br>실천할 수 있는 새로운 방법을<br> 찾고 있습니다.</p>
                                 <a href="" class="arrowright"></a>
                             </div>
-                            <svg width="643" height="1024">
+                            <svg class="reverse">
                                 <polygon points="0 0, 0 1024, 333 1024, 643 0"/>
                             </svg>
                         </div>
                     </div>
 
                     <div class="controller">
-                        <div class="slick-pagination"></div>
+                        <div class="m-slick-pagination"></div>
                         <div class="slick-auto">
                             <button type="button" class="slick-pause visible">
                                 <span class="blind">일시정지</span>
-                                <i class="xi-play-circle"></i>
+                                <i class="xi-pause-circle-o"></i>
                             </button>
                             <button type="button" class="slick-play">
                                 <span class="blind">자동실행</span>
-                                <i class="xi-pause-circle"></i>
+                                <i class="xi-play-circle-o"></i>
                             </button>
                         </div>
                     </div>
@@ -345,7 +341,9 @@
                 </div>
             </section>
 
-            <section id="cnt2"></section>
+            <section id="cnt2">
+                
+            </section>
 
             <section id="cnt3"></section>
 

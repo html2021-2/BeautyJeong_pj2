@@ -68,6 +68,7 @@ header, nav, section, footer{display: block;}
 .p_r{position: relative;}
 .p_a{position: absolute;}
 .blind{width: 1px;height: 1px;border: none;overflow: hidden;position: absolute;clip: rect(1px, 1px, 1px, 1px);clip-path: inset(50%);}
+.visible{visibility: visible !important;}
 
 //btn_more
 .btn_more{
@@ -83,7 +84,7 @@ header, nav, section, footer{display: block;}
 
 //skip navigation
 #skip a{
-    position: absolute;top: 0;left: -9999px;z-index: 1000;
+    position: absolute;top: 0;left: -9999px;z-index: 2000;
     &:focus{left: 0;width: 100%;height: 50px;line-height: 50px;color: $dBlue;background: $yellow;font-weight: 700;text-align: center;}
 }
 

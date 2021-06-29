@@ -14,14 +14,29 @@
     .header .header_right .header_icon li + li {
       padding-left: 28px; }
 
+.header.on {
+  background: #fff; }
+
 #mHeader {
   visibility: hidden;
   height: 0;
   overflow: hidden; }
 
 #pcHeader {
-  position: relative;
-  width: 100%; }
+  position: fixed;
+  width: 100%;
+  z-index: 1000; }
+  #pcHeader.active::before {
+    /* visibility: hidden;overflow: hidden;max-height: 0; */
+    content: "";
+    position: absolute;
+    top: 90px;
+    left: 0;
+    width: 100%;
+    height: 460px;
+    background: yellow;
+    border-top: 1px solid #707070;
+    border-bottom: 1px solid #707070; }
   #pcHeader .logo {
     display: -webkit-box;
     display: -moz-box;
@@ -37,7 +52,8 @@
     width: 85px;
     font-family: Roboto;
     font-weight: 400;
-    font-size: 14px; }
+    font-size: 14px;
+    height: 31px; }
     #pcHeader .lang button {
       position: relative;
       width: 100%;
@@ -54,6 +70,7 @@
         height: 12px;
         background: url("../images/common/p-header-lang-btn.png") no-repeat; }
     #pcHeader .lang ul {
+      display: none;
       position: absolute;
       top: 31px;
       left: 0;
@@ -61,13 +78,13 @@
       border-top: 2px solid #035aa6;
       text-align: center;
       padding: 15px 20px;
-      background: #fff;
-      visibility: hidden;
-      overflow: hidden;
-      max-height: 0; }
+      background: #eee; }
       #pcHeader .lang ul li {
         line-height: 2;
         color: #7f7f7f; }
+        #pcHeader .lang ul li:hover a, #pcHeader .lang ul li a:focus {
+          color: #0e4970;
+          font-weight: 500; }
   #pcHeader .header_right {
     display: -webkit-box;
     display: -moz-box;
@@ -79,20 +96,8 @@
     position: absolute;
     top: 0;
     right: 340px;
-    height: 100%; }
-  #pcHeader #pcGnb::before {
-    visibility: hidden;
-    overflow: hidden;
-    max-height: 0;
-    content: "";
-    position: absolute;
-    top: 90px;
-    left: 0;
-    width: 100%;
-    height: 460px;
-    background: #fff;
-    border-top: 1px solid #707070;
-    border-bottom: 1px solid #707070; }
+    height: 100%;
+    background: transparent; }
   #pcHeader #pcGnb > ul {
     display: -webkit-box;
     display: -moz-box;
@@ -101,23 +106,55 @@
     display: flex;
     padding-left: 40px; }
     #pcHeader #pcGnb > ul > li {
-      margin-right: 60px; }
+      margin-right: 45px; }
       #pcHeader #pcGnb > ul > li > a {
+        position: relative;
         display: block;
-        width: 100%;
-        height: 90px;
+        height: 91px;
         line-height: 90px;
         font-family: Roboto;
         font-weight: 400;
-        border-bottom: 3px solid transparent; }
+        text-align: center;
+        z-index: 10; }
+        #pcHeader #pcGnb > ul > li > a::before, #pcHeader #pcGnb > ul > li > a::after {
+          content: "";
+          position: absolute; }
+        #pcHeader #pcGnb > ul > li > a::before {
+          bottom: 7px;
+          width: 100%;
+          height: 3px;
+          background: transparent; }
+        #pcHeader #pcGnb > ul > li > a::after {
+          -webkit-transform: translateX(-50%);
+          -moz-transform: translateX(-50%);
+          transform: translateX(-50%);
+          width: 1px;
+          height: 8px;
+          border-bottom: 8px solid transparent;
+          border-right: 6px solid transparent;
+          border-left: 6px solid transparent;
+          bottom: 10px;
+          left: 50%; }
+      #pcHeader #pcGnb > ul > li:nth-child(1) a {
+        width: 39px; }
+      #pcHeader #pcGnb > ul > li:nth-child(2) a {
+        width: 100px; }
+      #pcHeader #pcGnb > ul > li:nth-child(3) a {
+        width: 55px; }
+      #pcHeader #pcGnb > ul > li:nth-child(4) a {
+        width: 97px; }
+      #pcHeader #pcGnb > ul > li:nth-child(5) a {
+        width: 97px; }
       #pcHeader #pcGnb > ul > li > a:hover, #pcHeader #pcGnb > ul > li > a:focus, #pcHeader #pcGnb > ul > li.on > a {
         border-bottom-color: #035aa6;
         font-weight: 500;
         color: #0e4970; }
+        #pcHeader #pcGnb > ul > li > a:hover::before, #pcHeader #pcGnb > ul > li > a:focus::before, #pcHeader #pcGnb > ul > li.on > a::before {
+          background: #035aa6; }
+        #pcHeader #pcGnb > ul > li > a:hover::after, #pcHeader #pcGnb > ul > li > a:focus::after, #pcHeader #pcGnb > ul > li.on > a::after {
+          border-bottom-color: #035aa6; }
   #pcHeader #pcGnb .dep2 {
-    visibility: hidden;
-    overflow: hidden;
-    max-height: 0;
+    display: none;
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
@@ -130,10 +167,7 @@
     height: 460px;
     padding: 55px 0;
     background: #fff;
-    font-size: 18px;
-    visibility: hidden;
-    overflow: hidden;
-    max-height: 0; }
+    font-size: 18px; }
     #pcHeader #pcGnb .dep2 .menu_tit {
       margin-left: 340px;
       padding-right: 40px;
@@ -160,10 +194,10 @@
           width: 6px;
           height: 10px;
           background: url("../images/common/p-header-gnb.png"); }
-  #pcHeader #pcGnb .dep2.on {
-    visibility: visible;
-    max-height: 460px; }
-  #pcHeader #pcGnb .dep3 {
+  #pcHeader #pcGnb li.on .dep2 {
+    display: block; }
+  #pcHeader #pcGnb ul li ul li .dep3 {
+    display: none;
     position: absolute;
     top: 0;
     right: -100%;
@@ -171,17 +205,17 @@
     height: 100%;
     padding-left: 20px;
     border-right: 1px solid #7f7f7f; }
-    #pcHeader #pcGnb .dep3 li + li {
+    #pcHeader #pcGnb ul li ul li .dep3 li + li {
       margin-top: 20px; }
-    #pcHeader #pcGnb .dep3 li > a:hover, #pcHeader #pcGnb .dep3 li > a:focus {
+    #pcHeader #pcGnb ul li ul li .dep3 li > a:hover, #pcHeader #pcGnb ul li ul li .dep3 li > a:focus {
       color: #4e4e4e; }
+  #pcHeader #pcGnb ul li ul li.on .dep3 {
+    display: block; }
   #pcHeader #pcGnb #cursorDrag {
     position: absolute;
     z-index: 1000; }
   #pcHeader #pcGnb .swiper-container {
-    visibility: hidden;
-    overflow: hidden;
-    max-height: 0;
+    /*  visibility: hidden;overflow: hidden;max-height: 0; */
     position: absolute;
     top: 91px;
     right: 0px;

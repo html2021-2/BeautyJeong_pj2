@@ -80,6 +80,9 @@ header, nav, section, footer {
   clip: rect(1px, 1px, 1px, 1px);
   clip-path: inset(50%); }
 
+.visible {
+  visibility: visible !important; }
+
 .btn_more {
   position: relative;
   display: inline-block;
@@ -123,7 +126,7 @@ header, nav, section, footer {
   position: absolute;
   top: 0;
   left: -9999px;
-  z-index: 1000; }
+  z-index: 2000; }
   #skip a:focus {
     left: 0;
     width: 100%;
