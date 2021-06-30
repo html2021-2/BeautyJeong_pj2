@@ -73,9 +73,12 @@ header, nav, section, footer{display: block;}
 //btn_more
 .btn_more{
   position: relative;display: inline-block;text-align: center;font-family: Roboto;font-weight: 500;
-  &::after{content: "";position: absolute;top: 6px;left: 10px;width: 5px;height: 9px; background: url("../images/main/more-arrow.png");}
+  &::after{
+    @include translateY-50;
+    content: "";position: absolute;top: 50%;left: 10px;width: 5px;height: 9px; background: url("../images/main/more-arrow.png");
+  }
   &.yellow{width: 80px;height: 21px;padding: 4px 6px 4px 16px;border-radius: 9px; background: $yellow;font-size: 12px;}
-  &.white{width: 146px;height: 52px;padding: 14px 22px 14px 33px; border-radius: 26px;background: #fff;font-size: 20px;}
+  &.white{width: 146px;height: 52px; border-radius: 26px;background: #fff;font-size: 20px;}
 }
 .arrowleft{background: url("../images/main/yellowLeft-arrow.png");width: 20px;height: 21px;}
 .arrowright{background: url("../images/main/yellowRight-arrow.png");width: 20px;height: 21px;}

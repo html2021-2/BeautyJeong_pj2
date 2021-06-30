@@ -90,9 +90,12 @@ header, nav, section, footer {
   font-family: Roboto;
   font-weight: 500; }
   .btn_more::after {
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    transform: translateY(-50%);
     content: "";
     position: absolute;
-    top: 6px;
+    top: 50%;
     left: 10px;
     width: 5px;
     height: 9px;
@@ -107,7 +110,6 @@ header, nav, section, footer {
   .btn_more.white {
     width: 146px;
     height: 52px;
-    padding: 14px 22px 14px 33px;
     border-radius: 26px;
     background: #fff;
     font-size: 20px; }
