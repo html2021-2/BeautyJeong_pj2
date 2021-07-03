@@ -1,4 +1,235 @@
 $(document).ready(function () {
+  
+  //pc, mobiile공통
+  // 1) 본문1 슬라이더, 하단 배너 텍스트 잘라 태그로 감싸기 / 애니메이션 지연시간 설정
+  $('#container .txt').each(function () {
+    let wordArray = $(this).html().split(' ');
+    // console.log(wordArray);
+    let tagWrite = '';
+    for (let i = 0; i < wordArray.length; i++) {
+      $(this).html(''); //기존 태그 우선 지우기
+      if (wordArray[i] === '<br>') {
+        tagWrite += '<br>';
+       } else {
+        let spanArray = wordArray[i].split(''); //한글자씩 잘라서 배열에 저장
+        // console.log(spanArray);
+        // 반복문을 통해 각 span 부모 안에 막내 자식으로 span 동적생성
+        tagWrite += ` <span class="word">`;
+        for (let j = 0; j < spanArray.length; j++) {
+          tagWrite += `<span class="up">${spanArray[j]}</span>`;
+        }
+        tagWrite += '</span>';
+      }
+      $(this).append(tagWrite);
+    }
+  });
+
+  // delay 시간 지정
+  $('#container .txtwrap').each(function () {
+    $(this).find('.up').each(function (idx) {
+      $(this).css('animationDelay', (idx * 0.03) + 0.3 + 's');
+    });
+  });
+
+  //#cnt2
+  const $hoverA = $('.cnt2 .hover_info');
+  $hoverA.on({
+    'focus mouseenter' : function () {
+      $(this).addClass("on");
+    },
+    'blur mouseleave' : function () {
+      $(this).removeClass("on");
+    }   
+  });
+  //홈퍼니싱 pc , 모바일 제어
+  $(window).on('resize', function () {
+    const winWid = $(this).width();
+    const winHei = $(this).height();
+    if(winWid > 768) {//pc
+      $('#cnt2 .mcnt2_tit').hide();
+    } else {//모바일
+      $('#cnt2 .mcnt2_tit').show();
+      $('#cnt2 .border p').hide().next().hide();
+      $('#cnt2 .photo5').hide().next().hide();
+
+      $('#cnt2 .photo2 img').attr({src: "images/furnishing/m-furnish2.jpg", alt: "이케아 주방"})
+      $('#cnt2 .photo3 img').attr({src: "images/furnishing/m-furnish3.jpg", alt: "이케아 주방"})
+      $('#cnt2 .photo4 img').attr({src: "images/furnishing/m-furnish4.jpg", alt: "이케아 주방"})
+
+      $('#cnt2 .photo .hover_box').after('<a href="" class="btn_more yellow">view more</a>')
+
+      //페럴렉스
+        $(window).on('scroll', function () {
+          //2) 스크롤바의 수직이동거리
+          // 스크롤바의 이동거리에 $(this).height()을 추가한 이유는 사용자가 스크롤바를 빨리 조작해서 컨텐츠가 보여지지 않을 경우를 대비 - 브라우저 한칸만큼 먼저 보여질 수 있도록 제어함(보여질 켄텐츠의 크기에 따라 값은 알아서 조절)
+          const scrollY = $(this).scrollTop() + $(this).height();
+          //console.log(scrollY);
+      
+          //4) #container section 9개를 하나씩 제어 each() => 컨텐츠와 가까워지면 .fade를 추가하고 멀어지면 제거
+          $('#cnt2 .photo').each(function (idx) {
+              if (scrollY > $(this).offset().top) {
+                  $(this).addClass('fade');
+              } else {
+                  $(this).removeClass('fade');
+              }
+          });
+        });
+
+    }
+  });
+
+
+  //atc2 탭브라우징 제어
+  	/* 1) 초기값 */
+    $('.tab:first-of-type, .tabpanel:first-of-type').addClass('active').attr('tabIndex', 0);
+    $('.tab:first-of-type').attr('aria-selected', true).siblings().attr('aria-selected', false);
+    $('.tabpanel:first-of-type').attr('aria-hidden', false).siblings('.tabpanel').attr('aria-hidden', true);
+  
+    /* 2) 탭버튼에서 키보드를 누르는 이벤트(keydown) - 키보드 제어 */
+    $('.tab').on('keydown', function (e) {
+      var key = e.keyCode;
+      console.log(key); //왼쪽방향키 37 , 오른쪽 방향키 39, 스페이스바 32 , 엔터 13
+      switch (key) {
+        case 37:    //왼쪽 방향키
+          $(this).attr('tabIndex', -1);
+          if ($(this).hasClass('first')) $(this).siblings('.last').attr('tabIndex', 0).focus();
+          else $(this).prev().attr('tabIndex', 0).focus();
+          break;
+        case 39:  //오른쪽 방향키
+          $(this) .attr('tabIndex', -1);
+          if ($(this).hasClass('last')) $(this).siblings('.first').attr('tabIndex', 0).focus();
+          else $(this).next().attr('tabIndex', 0).focus();
+          break;
+        case 36:  //HOME 키는 가장 처음으로
+          e.preventDefault();
+          $(this).siblings('.first').attr('tabIndex', 0).focus();
+          break;
+        case 35:  //END 키는 가장 마지막으로
+          e.preventDefault();
+          $(this).siblings('.last').attr('tabIndex', 0).focus();
+          break;
+        case 32:  //스페이스바
+        case 13:  //엔터
+          var $tg = $(this);
+          activeOn($tg);
+          break;
+      }
+    });
+  
+    //3) 탭 클릭 이벤트
+    $('.tab').on('click', function () {
+      var $tg = $(this);
+      activeOn($tg);
+    });
+  
+    function activeOn($target) {
+      $target.addClass('active').attr({'aria-selected': true, tabIndex: 0}).siblings().removeClass('active').attr({'aria-selected': false, tabIndex: -1});
+      $('#' + $target.attr('aria-controls')).addClass('active').attr({'aria-hidden': false, tabIndex: 0}).siblings('.tabpanel').removeClass('active').attr({'aria-hidden': true, tabIndex: -1});
+    }
+
+    //swiper slider
+    const swiper1 = new Swiper('#tabpanel1 .swiper-container', {
+      // Optional parameters
+      direction: 'horizontal',
+      loop: true,
+      effect: 'fade',
+      
+      fadeEffect: {
+        crossFade: true
+      },
+
+      pagination: {
+          el: '.swiper-pagination',
+          type: 'bullets',
+          clickable: true,
+      },
+
+      // Navigation arrows
+      navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+      },
+
+      scrollbar: {
+          el: '.swiper-scrollbar',
+          draggable: true,
+      },
+
+      scrollbar: {
+        el: '.swiper-scrollbar',
+        draggable: true,
+    },
+
+      observer: true,
+      observeParents: true //해당 요소와 부모 요소를 감지하여 DOM에 변화가 있으면 swiper를 초기화하여 문제를 해결
+
+  });
+  const swiper2 = new Swiper('#tabpanel2 .swiper-container', {
+      // Optional parameters
+      direction: 'horizontal',
+      loop: true,
+      effect: 'fade',
+
+      fadeEffect: {
+        crossFade: true
+      },
+
+      pagination: {
+          el: '.swiper-pagination',
+          type: 'bullets',
+          clickable: true,
+      },
+
+      // Navigation arrows
+      navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+      },
+
+      scrollbar: {
+          el: '.swiper-scrollbar',
+          draggable: true,
+      },
+
+      observer: true,
+      observeParents: true //해당 요소와 부모 요소를 감지하여 DOM에 변화가 있으면 swiper를 초기화하여 문제를 해결
+
+  });
+  const swiper3 = new Swiper('#tabpanel3 .swiper-container', {
+      // Optional parameters
+      direction: 'horizontal',
+      loop: true,
+      effect: 'fade',
+
+      fadeEffect: {
+        crossFade: true
+      },
+
+      pagination: {
+          el: '.swiper-pagination',
+          type: 'bullets',
+          clickable: true,
+      },
+
+      // Navigation arrows
+      navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+      },
+
+      scrollbar: {
+          el: '.swiper-scrollbar',
+          draggable: true,
+      },
+
+      observer: true,
+      observeParents: true //해당 요소와 부모 요소를 감지하여 DOM에 변화가 있으면 swiper를 초기화하여 문제를 해결
+
+  });
+
+  $('.swiper-scrollbar').attr({style:'transform: translate3d(0px, 0px, 0px), width: 142.857px, transition-duration: 0ms'})
+  
+
   //#pcCnt1
   //slick 슬라이더 - pc
   $('#pcCnt1 .slick-wrapper').slick({
@@ -21,7 +252,7 @@ $(document).ready(function () {
     mousemove: function (e) {
       const mouseX = e.pageX;
       const mouseY = e.pageY;
-      console.log(mouseX, mouseY);
+      // console.log(mouseX, mouseY);
       $(this).parents('.slick-container').next().css('visibility', 'visible');
       gsap.to('.cursorDrag', {left: mouseX + 20,top: mouseY,duration: 0.2})
     },
@@ -64,7 +295,7 @@ $(document).ready(function () {
     appendDots: $('.m-slick-pagination'),
     autoplay: true, 
     speed: 2000, //슬라이드 전환되는 시간 - 기본값 300
-    autoplaySpeed: 4000,
+    autoplaySpeed: 6000,
     easing: 'easeInOutQuint',
     pauseOnHover: false, //마우스 오버하면 슬라이더 정지
     draggable: false, //드래그 가능 여부
@@ -100,7 +331,6 @@ $(document).ready(function () {
 
   });
   $(window).trigger('resize');
-
 
   // cnt4 이케아 라이브 남은 시간
   $(window).on('scroll', function () {
@@ -160,6 +390,7 @@ $(document).ready(function () {
     }
 
   });
+
 
 });
 

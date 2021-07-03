@@ -31,14 +31,13 @@
     .lang{
         position: relative;margin-right: 64px;width: 85px;font-family: Roboto;font-weight: 400;font-size: 14px;height: 31px;
         button{
-            position: relative;width: 100%;height: 19px;line-height: 19px;line-height: 0.75;text-align: left;
+            position: relative;width: 100%;height: 19px;line-height: 0.75;text-align: left;
             &::after{
                 content: "";position: absolute;top: 4px;right: 0; width: 12px;height: 12px;background: url("../images/common/p-header-lang-btn.png") no-repeat;
             }
         }
         ul{
-            display: none;
-            position: absolute;top: 31px;left: 0;width: 100%;border-top: 2px solid $lBlue; text-align: center;padding: 15px 20px;background: #eee;
+            display: none;position: absolute;top: 31px;left: 0;width: 100%;border-top: 2px solid $lBlue; text-align: center;padding: 15px 20px;background: #eee;
             li{
                 line-height: 2;color: $lGray;
                 &:hover a, & a:focus{color: $dBlue;font-weight: 500;}
@@ -155,10 +154,12 @@
         .ft_menu{
             @include flex;
             ul{
-                margin-left: 140px;
+                margin-left: 140px;font-family: Roboto;font-size: 18px;font-weight: 500;
                 li{padding: 8px 0;}
+                a:hover, a:focus{color: $lBlue;}
+                &:nth-child(2){font-family: NotoSansKR;}
                 &:nth-child(3){
-                    a{display: block;position: relative;width: 100px;}
+                    a{display: block;position: relative;width: 115px;}
                     a::after{
                         @include translateY-50;
                         content: "";position: absolute;top: 50%;right: 0;width: 19px;height: 19px; background: url("../images/common/footer-sns.png") no-repeat 50% / cover;
@@ -173,7 +174,7 @@
         }
         .ft_bg{position: absolute;bottom: 0;left: 0;width: 100%;height: 320px; background: url("../images/common/footer-bg-daylight.svg") no-repeat 50% / cover;opacity: 0.05;z-index: -100;}
     }
-    .btn_top{position: absolute;top: 106px;right: 99px;width: 25px;height: 15px;background: url("../images/common/footer-top-btn.png") no-repeat 50% / cover;z-index: 100;}
+    /* .btn_top{position: absolute;top: 106px;right: 99px;width: 25px;height: 15px;background: url("../images/common/footer-top-btn.png") no-repeat 50% / cover;z-index: 100;} */
 
     .ft_bottom{
         background: $dBlue;color: #fff;height: 50px;line-height: 50px;
@@ -183,6 +184,11 @@
             span{font-weight: 700;}
         }
     }
+}
+
+#forTop{
+    position: relative;
+    .btn_top{position: absolute;top: 400px;right: 99px;width: 25px;height: 15px;background: url("../images/common/footer-top-btn.png") no-repeat 50% / cover;z-index: 100;}
 }
  
 
@@ -233,8 +239,10 @@
                 padding: 0 0 25px;border-top: none;
             }
         }
-        .btn_top{top: 76px;right: 56px;}
     }   
+
+    //#forTop{.btn_top{right: 20px;top: 2090px;}}
+    
 }
 
 //모바일
@@ -276,7 +284,7 @@
                 padding: 0 0 vw-calc414(25);
             }
         }
-        .btn_top{top: vw-calc414(70);right: vw-calc414(15);}
     }   
+    //#forTop{.btn_top{top: vw-calc414(1520);right: vw-calc414(15);}}
 
 }
