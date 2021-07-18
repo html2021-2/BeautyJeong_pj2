@@ -216,26 +216,16 @@
 
         <header id="mHeader" class="header">
             <h1 class="logo">
-                <a href="index.html"><img src="images/common/ikea-logo.svg" alt="이케아"></a>
+                <a href="index.html"><img src="images/common/logo_circle.png" alt="이케아"></a>
             </h1>
-            <div class="header_right">
-                <ul class="header_icon">
-                    <li>
-                        <button>
-                            <img src="images/common/m-header-earch.png" alt="검색창 열기">
-                        </button>
-                    </li>
-                    <li>
-                        <a href="">
-                            <img src="images/common/m-header-login.png" alt="로그인">
-                        </a>
-                    </li>
-                </ul>
+            <div class="m_util">
+                <button class="btn_gnb_open" type="button">
+                    <img src="images/common/m_menuBtn.png" alt="전체메뉴 열기">
+                </button>
+                <button class="header_right" type="button">
+                    <img src="images/common/m_search_icon.png" alt="검색창 열기">
+                </button>
             </div>
-            <button class="btn_gnb_open" type="button">
-                <img src="images/common/m-header-menu-btn.png" alt="전체메뉴 열기">
-            </button>
-
         </header>
 
         <div id="container">
@@ -344,7 +334,7 @@
 
             <section id="cnt2" class="cnt2">
                 <div class="cnt2_wrap">
-                    <div>
+                    <div class="tit_box">
                         <div class="border txtwrap">
                             <h2>Home Furnishing</h2>
                             <p>나만의 개성있는 집을 <br><!-- 모바일에서는 display: none -->
@@ -354,181 +344,227 @@
                     </div>
                     <div class="photo photo1">
                         <h3 class="mcnt2_tit"><span>Bed</span> <span>Room</span></h3><!-- pc에서 숨기기, 모바일에서만 -->
-                        <img src="images/furnishing/furnish1.jpg" alt="따뜻한 햇살이 비추는 포근한 느낌의 침실"><!-- 모바일에서 사진 뒷 배경: 가상요소  -->
+                        <img src="images/furnishing/furnish1.jpg" alt="따뜻한 햇살이 비추는 포근한 느낌의 침실">
+                        <!-- 모바일에서 사진 뒷 배경: 가상요소  -->
                         <div class="hover_box hover_box1">
-                            <a href="" class="hover_info info1">
-                                <p>
-                                    <span class="blueTxt">NEW</span>
-                                    <span class="nameTxt">
-                                        ÄNGSLILJA
-                                        엥슬릴리아
-                                    </span>
-                                    <span class="price">
-                                        이불커버+<br>
-                                        베개커버2<br>
-                                        ￦ 39,900
-                                    </span>
-                                </p>
-                            </a>
-                            <a href="" class="hover_info info2">
-                                <p>
-                                    <span class="blueTxt">NEW</span>
-                                    <span class="nameTxt">
-                                        SNÖBYAR
-                                        스뇌뷔아르
-                                    </span>
-                                    <span class="price">
-                                        탁상스탠드<br>
-                                        ￦ 59,900
-                                    </span>
-                                </p>
-                            </a>
+                            <div class="shop_area area1">
+                                <!-- 위치지정 -->
+                                <a href="" class="hover_circle"></a>
+                                <div class="hover_info">
+                                    <p>
+                                        <span class="blueTxt">NEW</span>
+                                        <span class="nameTxt">
+                                            ÄNGSLILJA <br>
+                                            엥슬릴리아
+                                        </span>
+                                        <span class="price">
+                                            이불커버+<br>
+                                            베개커버2<br>
+                                            ￦ 39,900
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="shop_area area2">
+                                <a href="" class="hover_circle"></a>
+                                <div class="hover_info">
+                                    <p>
+                                        <span class="blueTxt">NEW</span>
+                                        <span class="nameTxt">
+                                            SNÖBYAR <br>
+                                            스뇌뷔아르
+                                        </span>
+                                        <span class="price">
+                                            탁상스탠드<br>
+                                            ￦ 59,900
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="photo photo2">
                         <h3 class="mcnt2_tit">Kitchen</h3><!-- pc에서 숨기기, 모바일에서만 -->
-                        <img src="images/furnishing/p-furnish2.jpg" alt="야외피크닉을 즐길 수 있는 야외마당"><!-- 사진바꾸도록 스크립트에서 attr메서드로 사진변경 -->
+                        <img src="images/furnishing/p-furnish2.jpg" alt="야외피크닉을 즐길 수 있는 야외마당">
+                        <!-- 사진바꾸도록 스크립트에서 attr메서드로 사진변경 -->
                         <div class="hover_box hover_box2">
-                            <a href="" class="hover_info info1">
-                                <p>
-                                    <span class="blueTxt">BEST</span>
-                                    <span class="nameTxt">
-                                        BONDHOLMEN
-                                        본드홀멘
-                                    </span>
-                                    <span class="price">
-                                        야외팔걸이의자<br>
-                                        ￦ 99,900
-                                    </span>
-                                </p>
-                            </a>
-                            <a href="" class="hover_info info2">
-                                <p>
-                                    <span class="blueTxt">BEST</span>
-                                    <span class="nameTxt">
-                                        ASKHOLMEN
-                                        아스크홀멘
-                                    </span>
-                                    <span class="price">
-                                        야외테이블<br>
-                                        ￦ 69,900
-                                    </span>
-                                </p>
-                            </a>
+                            <div class="shop_area area1">
+                                <!-- 위치지정 -->
+                                <a href="" class="hover_circle"></a>
+                                <div class="hover_info">
+                                    <p>
+                                        <span class="blueTxt">BEST</span>
+                                        <span class="nameTxt">
+                                            BONDHOLMEN <br>
+                                            본드홀멘
+                                        </span>
+                                        <span class="price">
+                                            야외팔걸이의자<br>
+                                            ￦ 99,900
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="shop_area area2">
+                                <!-- 위치지정 -->
+                                <a href="" class="hover_circle"></a>
+                                <div class="hover_info">
+                                    <p>
+                                        <span class="blueTxt">BEST</span>
+                                        <span class="nameTxt">
+                                            ASKHOLMEN <br>
+                                            아스크홀멘
+                                        </span>
+                                        <span class="price">
+                                            야외테이블<br>
+                                            ￦ 69,900
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                     <div class="photo photo3">
                         <h3 class="mcnt2_tit"><span>Home</span> <span>Office</span></h3><!-- pc에서 숨기기, 모바일에서만 -->
                         <img src="images/furnishing/p-furnish3.jpg" alt="바람에 날리는 커텐과 식물들이 있는 방">
                         <div class="hover_box hover_box3">
-                            <a href="" class="hover_info info1">
-                                <p>
-                                    <span class="blueTxt">SALE</span><br>
-                                    <span class="nameTxt">
-                                        LILL
-                                        릴
-                                    </span>
-                                    <span class="price">
-                                        망사커튼 한쌍, 화이트<br>
-                                        ￦ 5,000
-                                    </span>
-                                </p>
-                            </a>
-                            <a href="" class="hover_info info2">
-                                <p>
-                                    <span class="blueTxt">SALE</span>
-                                    <span class="nameTxt">
-                                        FNITTRIG
-                                        프니트리그
-                                    </span>
-                                    <span class="price">
-                                        꽃병<br>
-                                        ￦ 12,900
-                                    </span>
-                                </p>
-                            </a>
+                            <div class="shop_area area1">
+                                <!-- 위치지정 -->
+                                <a href="" class="hover_circle"></a>
+                                <div class="hover_info">
+                                    <p>
+                                        <span class="blueTxt">SALE</span>
+                                        <span class="nameTxt">
+                                            LILL <br>릴
+                                        </span>
+                                        <span class="price">
+                                            망사커튼 한쌍<br>화이트<br>￦ 5,000
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="shop_area area2">
+                                <!-- 위치지정 -->
+                                <a href="" class="hover_circle"></a>
+                                <div class="hover_info">
+                                    <p>
+                                        <span class="blueTxt">SALE</span>
+                                        <span class="nameTxt">
+                                            FNITTRIG <br>
+                                            프니트리그
+                                        </span>
+                                        <span class="price">
+                                            꽃병<br>
+                                            ￦ 12,900
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="photo photo4">
                         <h3 class="mcnt2_tit"><span>Dining</span> <span>Room</span></h3><!-- pc에서 숨기기, 모바일에서만 -->
-                        <img src="images/furnishing/p-furnish4.jpg" alt="화이트 톤의 어린이 방"><!-- 사진바꾸도록 스크립트에서 attr메서드로 사진변경 -->
+                        <img src="images/furnishing/p-furnish4.jpg" alt="화이트 톤의 어린이 방">
+                        <!-- 사진바꾸도록 스크립트에서 attr메서드로 사진변경 -->
                         <div class="hover_box hover_box4">
-                            <a href="" class="hover_info info1">
-                                <p>
-                                    <span class="blueTxt">NEW</span>
-                                    <span class="nameTxt">
-                                        KRUX
-                                        크룩스
-                                    </span>
-                                    <span class="price">
-                                        LED작업등<br>
-                                        ￦ 39,900
-                                    </span>
-                                </p>
-                            </a>
-                            <a href="" class="hover_info info2">
-                                <p>
-                                    <span class="blueTxt">NEW</span>
-                                    <span class="nameTxt">
-                                        LOBERGET / SIBBEN
-                                        로베리에트 / 시벤
-                                    </span>
-                                    <span class="price">
-                                        어린이책상의자 <br>
-                                        ￦ 20,000
-                                    </span>
-                                </p>
-                            </a>
+                            <div class="shop_area area1">
+                                <!-- 위치지정 -->
+                                <a href="" class="hover_circle"></a>
+                                <div class="hover_info">
+                                    <p>
+                                        <span class="blueTxt">NEW</span>
+                                        <span class="nameTxt">
+                                            KRUX <br>
+                                            크룩스
+                                        </span>
+                                        <span class="price">
+                                            LED작업등<br>
+                                            ￦ 39,900
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="shop_area area2">
+                                <!-- 위치지정 -->
+                                <a href="" class="hover_circle"></a>
+                                <div class="hover_info">
+                                    <p>
+                                        <span class="blueTxt">NEW</span>
+                                        <span class="nameTxt">
+                                            LOBERGET / SIBBEN<br>로베리에트 / 시벤
+                                        </span>
+                                        <span class="price">
+                                            어린이책상의자<br>
+                                            ￦ 20,000
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="photo photo5"><!-- 모바일에서 전체 display: block -->
+                    <div class="photo photo5">
+                        <!-- 모바일에서 전체 display: block -->
                         <img src="images/furnishing/p-furnish5.jpg" alt="조명이 켜진 아늑한 느낌의 파티">
                         <div class="hover_box hover_box5">
-                            <a href="" class="hover_info info1">
-                                <p>
-                                    <span class="blueTxt">BEST</span>
-                                    <span class="nameTxt">
-                                        UTSUND
-                                        웃순드
-                                    </span>
-                                    <span class="price">
-                                        LED체인조명24등<br>
-                                        ￦ 49,900
-                                    </span>
-                                </p>
-                            </a>
-                            <a href="" class="hover_info info2">
-                                <p>
-                                    <span class="blueTxt">BEST</span>
-                                    <span class="nameTxt">
-                                        VIMLE
-                                        빔레
-                                    </span>
-                                    <span class="price">
-                                        3인용소파베드+<br>
-                                        긴 의자 커버<br>
-                                        ￦ 250,000
-                                    </span>
-                                </p>
-                            </a>
+                            <div class="shop_area area1">
+                                <!-- 위치지정 -->
+                                <a href="" class="hover_circle"></a>
+                                <div class="hover_info">
+                                    <p>
+                                        <span class="blueTxt">BEST</span>
+                                        <span class="nameTxt">
+                                            UTSUND <br>
+                                            웃순드
+                                        </span>
+                                        <span class="price">
+                                            LED체인조명24등<br>
+                                            ￦ 49,900
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="shop_area area2">
+                                <!-- 위치지정 -->
+                                <a href="" class="hover_circle"></a>
+                                <div class="hover_info">
+                                    <p>
+                                        <span class="blueTxt">BEST</span>
+                                        <span class="nameTxt">
+                                            VIMLE
+                                            빔레
+                                        </span>
+                                        <span class="price">
+                                            3인용소파베드+<br>
+                                            긴 의자 커버<br>
+                                            ￦ 250,000
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="photo photo6"><!-- 모바일에서 전체 display: block -->
+                    <div class="photo photo6">
+                        <!-- 모바일에서 전체 display: block -->
                         <img src="images/furnishing/p-furnish6.jpg" alt="아름다운 조화들로 꾸며진 주방">
                         <div class="hover_box hover_box6">
-                            <a href="" class="hover_info info1">
-                                <p>
-                                    <span class="blueTxt">SALE</span>
-                                    <span class="nameTxt">
-                                        FEJKA
-                                        페이카
-                                    </span>
-                                    <span class="price">
-                                        인조식물<br>
-                                        ￦ 12,900
-                                    </span>
-                                </p>
-                            </a>
+                            <div class="shop_area area1">
+                                <!-- 위치지정 -->
+                                <a href="" class="hover_circle"></a>
+                                <div class="hover_info">
+                                    <p>
+                                        <span class="blueTxt">SALE</span>
+                                        <span class="nameTxt">
+                                            FEJKA <br>
+                                            페이카
+                                        </span>
+                                        <span class="price">
+                                            인조식물<br>
+                                            ￦ 12,900
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -550,19 +586,19 @@
                                     <p>가구세트</p>
                                 </a>
                             </li>
-                            <li>
+                            <li class="margin_left">
                                 <a href="">
                                     <img src="images/main/category-icon/cnt3-bed.svg" alt="">
                                     <p>침실가구</p>
                                 </a>
                             </li>
-                            <li>
+                            <li class="margin_left">
                                 <a href="">
                                     <img src="images/main/category-icon/cnt3-wardrobe.svg" alt="">
                                     <p>드레스룸</p>
                                 </a>
                             </li>
-                            <li>
+                            <li class="margin_left">
                                 <a href="">
                                     <img src="images/main/category-icon/cnt3-kitchen.svg" alt="">
                                     <p>주방가구</p>
@@ -574,19 +610,19 @@
                                     <p>서재가구</p>
                                 </a>
                             </li>
-                            <li>
+                            <li class="margin_left">
                                 <a href="">
                                     <img src="images/main/category-icon/cnt3-children-toys.svg" alt="">
                                     <p>어린이가구</p>
                                 </a>
                             </li>
-                            <li>
+                            <li class="margin_left">
                                 <a href="">
                                     <img src="images/main/category-icon/cnt3-nightstand.svg" alt="">
                                     <p>수납가구</p>
                                 </a>
                             </li>
-                            <li>
+                            <li class="margin_left">
                                 <a href="">
                                     <img src="images/main/category-icon/cnt3-dressing-table.svg" alt="">
                                     <p>화장대/거울</p>
@@ -615,8 +651,8 @@
                                                     <div class="name_price">
                                                         <p>
                                                             <span>
-                                                                LED태양광펜던트등
-                                                                실외용/베이지38 cm
+                                                                LED태양광펜던트등<br>
+                                                                실외용, 베이지 38cm
                                                             </span>
                                                             <span>￦ 39,900</span>
                                                         </p>
@@ -637,8 +673,8 @@
                                                     <div class="name_price">
                                                         <p>
                                                             <span>
-                                                                평직러그, 실내외
-                                                                다크그린/오프화이트160x230 cm
+                                                                평직러그<br>
+                                                                실내외, 다크그린/오프화이트 160x230cm
                                                             </span>
                                                             <span>￦ 79,900</span>
                                                         </p>
@@ -659,8 +695,8 @@
                                                     <div class="name_price">
                                                         <p>
                                                             <span>
-                                                                발코니테이블
-                                                                화이트50 cm
+                                                                발코니테이블<br>
+                                                                화이트 50cm
                                                             </span>
                                                             <span>￦ 27,900</span>
                                                         </p>
@@ -681,8 +717,8 @@
                                                     <div class="name_price">
                                                         <p>
                                                             <span>
-                                                                꽃병
-                                                                유리17 cm
+                                                                꽃병<br>
+                                                                유리 17cm
                                                             </span>
                                                             <span>￦ 1,700</span>
                                                         </p>
@@ -703,8 +739,8 @@
                                                     <div class="name_price">
                                                         <p>
                                                             <span>
-                                                                쿠션커버
-                                                                그린 내추럴/스트라이프50x50 cm
+                                                                쿠션커버<br>
+                                                                그린 내추럴, 스트라이프 50x50cm
                                                             </span>
                                                             <span>￦ 5,900</span>
                                                         </p>
@@ -738,7 +774,7 @@
                                                     <h2>TÄRNABY</h2>
                                                     <div class="name_price">
                                                         <p>
-                                                            <span>탁상스탠드, 다크그린</span>
+                                                            <span>탁상스탠드<br> 다크그린</span>
                                                             <span aria-label="정가 39,900원">￦ 39,900</span>
                                                             <span aria-label="할인가 29,900원">￦ 29,900</span>
                                                         </p>
@@ -760,7 +796,7 @@
                                                         <p>
                                                             <span>
                                                                 옷걸이행거 <br>
-                                                                그레이그린45x170 cm
+                                                                그레이그린 45x170cm
                                                             </span>
                                                             <span aria-label="정가 69,900원">￦ 69,900</span>
                                                             <span aria-label="할인가 59,900원">￦ 59,900</span>
@@ -805,8 +841,8 @@
                                                     <div class="name_price">
                                                         <p>
                                                             <span>
-                                                                침대협탁, 대나무 <br>
-                                                                화이트40x40 cm
+                                                                침대협탁<br>
+                                                                대나무, 화이트 40x40cm
                                                             </span>
                                                             <span aria-label="정가 34,900원">￦ 34,900</span>
                                                             <span aria-label="할인가 24,900원">￦ 24,900</span>
@@ -828,8 +864,8 @@
                                                     <div class="name_price">
                                                         <p>
                                                             <span>
-                                                                책상, 물푸레무늬목 <br>
-                                                                118x45 cm
+                                                                책상<br>
+                                                                물푸레무늬목, 118x45cm
                                                             </span>
                                                             <span aria-label="정가 199,000원">￦ 199,000</span>
                                                             <span aria-label="할인가 169,000원">￦ 169,000</span>
@@ -866,7 +902,7 @@
                                                         <p>
                                                             <span>
                                                                 옷걸이행거 <br>
-                                                                화이트99x152 cm
+                                                                화이트 99x152cm
                                                             </span>
                                                             <span>￦ 9,900</span>
                                                         </p>
@@ -874,8 +910,8 @@
                                                     <a href="" class="btn_more yellow">view more</a>
                                                 </div>
                                                 <div id="txtBottom">
-                                                    <a
-                                                        href="https://youtu.be/Ub888ZdrzkM?list=PL4RCz3Ybq6GLTK5hOjnfiLoWF-xdld4bd" class="tip">조립TIP
+                                                    <a href="https://youtu.be/Ub888ZdrzkM?list=PL4RCz3Ybq6GLTK5hOjnfiLoWF-xdld4bd"
+                                                        class="tip">조립TIP
                                                         바로가기</a><!-- 가상요소 : 아이콘 추가 -->
                                                     <a href="" class="wish">장바구니</a>
                                                 </div>
@@ -890,7 +926,7 @@
                                                         <p>
                                                             <span>
                                                                 악어 욕조매트<br>
-                                                                그린33x90 cm
+                                                                그린 33x90cm
                                                             </span>
                                                             <span>￦ 5,900</span>
                                                         </p>
@@ -912,7 +948,7 @@
                                                         <p>
                                                             <span>
                                                                 커튼한쌍<br>
-                                                                화이트145x250 cm
+                                                                화이트 145x250cm
                                                             </span>
                                                             <span>￦ 17,900</span>
                                                         </p>
@@ -934,7 +970,7 @@
                                                         <p>
                                                             <span>
                                                                 드롭리프테이블<br>
-                                                                화이트48/92x60 cm
+                                                                화이트 48/92x60cm
                                                             </span>
                                                             <span>￦ 54,900</span>
                                                         </p>
@@ -989,7 +1025,7 @@
                         <div class="txtbox">
                             <h2>IKEA LIVE</h2>
                             <p class="tit">숨이 트이는 나만의 침실 만들기 <br>
-                                2021년 7월 1일 오후 4:00</p>
+                                2021년 7월 <span class="date">  </span>일 오후 4:00</p>
                             <div class="golive">
                                 <p><a href="" class="prev">이전 라이브 보러가기</a></p><!-- 가상요소: 더보기버튼 -->
                                 <p><a href="" class="next">다음 라이브 보러가기</a></p><!-- 가상요소: 더보기버튼 -->

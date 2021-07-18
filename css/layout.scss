@@ -1,23 +1,12 @@
 @charset "utf-8";
 @import "_var", "_mixin", "_function";
 
-
-//header pc,mobile공통
-.header{
-    @include flex;height: 90px;
-    .header_right{
-        .header_icon{
-            @include flex;
-            li + li{padding-left: 28px;}
-        }
-    }
-}
-.header.on{background: #fff;}
-
-//pcHeader(1920)
+//pcHeader
  #mHeader{visibility: hidden;height: 0;overflow: hidden;}
+ .header.on{background: #fff;}
  #pcHeader{
-    position: fixed; width: 100%;z-index: 1000;
+    @include flex;
+    position: fixed; width: 100%;z-index: 1000;height: 90px;
     //뎁스2 흰배경
     &.active::before{
         content: "";position: absolute;top: 90px;left: 0;width: 100%;height: 475px;background: #fff;border-top: 1px solid #707070;border-bottom: 1px solid #707070;
@@ -26,18 +15,19 @@
     .logo{
         @include flex;
         @include align-items;
-        margin-left: 340px;
+        margin-left: vw-calc1920(340);
     }
     .lang{
         position: relative;margin-right: 64px;width: 85px;font-family: Roboto;font-weight: 400;font-size: 14px;height: 31px;
         button{
-            position: relative;width: 100%;height: 19px;line-height: 0.75;text-align: left;
+            position: relative;width: 100%;height: 19px;line-height: 19px;line-height: 0.75;text-align: left;
             &::after{
                 content: "";position: absolute;top: 4px;right: 0; width: 12px;height: 12px;background: url("../images/common/p-header-lang-btn.png") no-repeat;
             }
         }
         ul{
-            display: none;position: absolute;top: 31px;left: 0;width: 100%;border-top: 2px solid $lBlue; text-align: center;padding: 15px 20px;background: #eee;
+            display: none;
+            position: absolute;top: 31px;left: 0;width: 100%;border-top: 2px solid $lBlue; text-align: center;padding: 15px 20px;background: #eee;
             li{
                 line-height: 2;color: $lGray;
                 &:hover a, & a:focus{color: $dBlue;font-weight: 500;}
@@ -47,7 +37,11 @@
     .header_right{
         @include flex;
         @include align-items;
-        position: absolute;top: 0;right: 340px;height: 100%;
+        position: absolute;top: 0;right: vw-calc1920(340);height: 100%;
+        .header_icon{
+            @include flex;
+            li + li{padding-left: 28px;}
+        }
     }
 
     #pcGnb{
@@ -55,15 +49,11 @@
             @include flex;
             padding-left: 40px;
             > li{
-                margin-right: 45px;
+                margin-right: vw-calc1920(45);
                 > a{//height: 91px; -> 1px 보더를 포함하고 있는 헤더배경이 top: 90px이므로 헤더의 배경과 겹치게 하려고
                     position: relative; display: block;height: 91px;line-height: 90px;font-family: Roboto;font-weight: 400;text-align: center;z-index: 10;
                     &::before,&::after{content: "";position: absolute;}
-                    &::before{bottom: 7px;width: 100%;height: 3px;background: transparent;}
-                    &::after{
-                        @include translateX-50;
-                        width: 1px;height: 8px; border-bottom: 8px solid transparent;border-right: 6px solid transparent;border-left: 6px solid transparent;bottom: 0;left: 50%;bottom: 10px;
-                    }
+                    &::before{bottom: 0;width: 100%;height: 5px;background: transparent;}
                 }
                 &:nth-child(1) a{width: 39px;}
                 &:nth-child(2) a{width: 100px;}
@@ -73,15 +63,13 @@
                 & > a:hover, & > a:focus, &.on > a{
                     border-bottom-color: $lBlue;font-weight: 500;color: $dBlue;
                     &::before{background: $lBlue;}
-                    &::after{border-bottom-color: $lBlue;}
                 }
             }
         }
         .dep2{
-            /* visibility: hidden;overflow: hidden;max-height: 0; */
             @include flex;
             position: absolute;top: 91px;left: 0;width: 50%;height: 475px;padding: 55px 0; background: #fff;font-size: 18px;
-            .menu_tit{width: 100px; margin-left: 340px;padding-right: 40px;border-right: 1px solid $lGray;color: $dBlue;}
+            .menu_tit{width: 100px; margin-left: vw-calc1920(340);padding-right: 40px;border-right: 1px solid $lGray;color: $dBlue;}
             .dep2_cnt{
                 position: relative; padding-left: 40px;border-right: 1px solid $lGray;color: $lGray;
                 > li > a{ 
@@ -89,7 +77,7 @@
                 }
                 > li + li{margin-top: 20px;}
                 > li > a:hover, > li > a:focus{
-                    color: $dGray;
+                    color: $dBlue;
                     &::after{content: "";position: absolute;top: 50%;right: 25px;width: 6px;height: 10px;background: url("../images/common/p-header-gnb.png");}
                 }
             }
@@ -98,13 +86,11 @@
         .dep3{
             position: absolute;top: 0;right: -100%;width: 100%;height: 100%;padding-left: 20px;border-right: 1px solid $lGray;
             li + li{margin-top: 20px;}
-            li > a:hover, li > a:focus{color: $dGray;}
+            li > a:hover, li > a:focus{color: $dBlue;}
         }
 
         //banner: swiper slider
-        #cursorDrag{position: absolute;z-index: 1000;}
         .swiper-container{
-           /*  visibility: hidden;overflow: hidden;max-height: 0; */
             position: absolute;top: 91px;right: 0px;width: 50%;height: 460px;z-index: 800;
             .swiper-pagination{
                 bottom: 70px;left: -150px;
@@ -113,25 +99,24 @@
                     &.swiper-pagination-bullet-active{background: #dadada;border: 1px solid #a19a9a;}
                 }
             }
-            
         }
+
         .swiper-wrapper{
             top: -25px;
             .swiper-slide{
                 @include flex;
                 @include align-items;
-                img{width: 562px;height: 274px;border-radius: 15px;}
+                img{width: vw-calc1920(562);height: vw-calc1920(274);border-radius: 15px;}
             }
             
             .txtbox{
-                margin-left: 24px;
+                margin-left: vw-calc1920(24);
                 strong{
                     font-size: 32px;line-height: 38px;
                     span{color: $yellow;}
                 }
                 p{padding: 12px 0 30px;font-size: 19px;}
-                a{
-                    display: block;width: 155px;height: 37px; font-size: 13px;line-height: 2.8;color: #fff;background: $lBlue;border-radius: 9px;text-align: center;}
+                a{display: block;width: vw-calc1920(155);height:  vw-calc1920(37); font-size: 13px;line-height: 2.8;color: #fff;background: $lBlue;border-radius: 9px;text-align: center;}
             }
         }
     }
@@ -187,31 +172,83 @@
 }
 
 #forTop{
-    position: relative;
+    position: relative;z-index: 0;
     .btn_top{position: absolute;top: 400px;right: 99px;width: 25px;height: 15px;background: url("../images/common/footer-top-btn.png") no-repeat 50% / cover;z-index: 100;}
 }
  
+//작은pc : 1680px
+@media screen and (max-width: 1680px) {
+  //banner: swiper slider
+  #pcHeader #pcGnb{
+    .swiper-container{
+        width: 45%;
+        .swiper-pagination{left: -100px;}
+    }
+    .swiper-wrapper{       
+      .txtbox{
+          strong{font-size: 22px;}
+          p{font-size: 15px;}
+          a{font-size: 12px;}
+      }
+    } 
+  }
+}
 
-//태블릿
-@media screen and (max-width: 768px) {
+//작은pc : 1440px
+@media screen and (max-width: 1440px) {
+    //#header
+    #pcHeader{        
+        .logo{margin-left: 12.7vw;}
+        .header_right{right: 12.708333vw;}
+    
+        #pcGnb{
+            .dep2{
+                .menu_tit{margin-left: 10.708333vw;}
+            }    
+            //banner: swiper slider
+            .swiper-container{
+                width: 45%;
+                .swiper-pagination{left: vw-calc1440(-100);}
+            }
+    
+            .swiper-wrapper{
+                .swiper-slide{
+                    img{width: vw-calc1440(450);height: vw-calc1440(274);}
+                }
+                .txtbox{
+                    strong{font-size: 23px;}
+                    p{font-size: 15px;}
+                    a{font-size: 9px;}
+                }
+            }
+        }
+    
+    }
+}
+
+
+//태블릿 : 1024px
+@media screen and (max-width: 1024px) {
     //header 
     #pcHeader{display: none;}
     #pcCnt1{display: none;}
-    #mHeader{visibility: visible;height: 90px;overflow: visible;}
+    #mHeader{visibility: visible;height: 100px;overflow: visible;}
 
     #mHeader{
-        @include justify-content(space-between);
-        @include align-items;
-        position: absolute;z-index: 900;width: 100%;background: #fff;
-        .header_right{
-            margin-right: 25px;
-        }
+        position: absolute;z-index: 900;width: 100%;background: $dBlue;
         .logo{
-            padding-left: 345px;
+            @include translate-50;
+            position: absolute;top: 50%;left: 50%;
+            img{width: 170px;}
         }
-        .btn_gnb_open{
-            @include translateY-50;
-            position: absolute;top: 50%;left: 25px;
+        .m_util{
+            @include flex;
+            @include justify-content(space-between);
+            @include align-items;
+            height: 100%;margin: 0 50px;
+            .btn_gnb_open{
+                @include transform(rotate(180deg));
+            }
         }
     }
 
@@ -239,29 +276,71 @@
                 padding: 0 0 25px;border-top: none;
             }
         }
-    }   
+    }       
+}
 
-    //#forTop{.btn_top{right: 20px;top: 2090px;}}
-    
+//태블릿 : 768px
+@media screen and (max-width: 768px) {
+    //header 
+    #pcHeader{display: none;}
+    #pcCnt1{display: none;}
+    #mHeader{visibility: visible;height: 100px;overflow: visible;}
+
+    #mHeader{
+        position: absolute;z-index: 900;width: 100%;background: $dBlue;
+        .logo{
+            @include translate-50;
+            position: absolute;top: 50%;left: 50%;
+            img{width: 170px;}
+        }
+        .m_util{
+            @include flex;
+            @include justify-content(space-between);
+            @include align-items;
+            height: 100%;margin: 0 50px;
+            .btn_gnb_open{
+                @include transform(rotate(180deg));
+            }
+        }
+    }
+
+    //footer
+    #footer{
+        .ft_body{padding-top: 65px;}
+        .ft_inner{
+            width: 93.48958vw; //718px; 718 ~ 414에서는 가로에 스크롤이 생겨요
+            .inner_top{
+                @include flex-direction;
+                @include flex-wrap;
+                .ft_logo{font-size: 30px;margin-bottom: 24px;}
+            }
+            .ft_menu{
+                @include flex-direction;
+                @include flex-wrap;
+                font-size: 20px;
+                ul{
+                    margin-left: 0;padding: 35px 0;
+                    &:nth-child(3){a{width: 125px;}}
+                }
+                ul + ul{border-top: 1px solid $lBlue;}
+            }
+            .inner_bottom{
+                padding: 0 0 25px;border-top: none;
+            }
+        }
+    }       
 }
 
 //모바일
 @media screen and (max-width: 414px) {
+    //header 
+    #mHeader{height: vw-calc414(100);}
+
     #mHeader{
-        height: vw-calc414(50);
         .logo{
-            width: vw-calc414(16);
-            padding-left: vw-calc414(170);
-            img{height: vw-calc414(30);}
+            img{width: vw-calc414(150);}
         }
-        .btn_gnb_open{
-            img{width: vw-calc414(20);}
-        }
-        .header_icon{
-            @include flex;
-            li + li{padding-left: vw-calc414(16);}
-            img{width: vw-calc414(20);}
-        }
+        .m_util{margin: 0 vw-calc414(30);}
     }
 
     //footer
@@ -285,6 +364,4 @@
             }
         }
     }   
-    //#forTop{.btn_top{top: vw-calc414(1520);right: vw-calc414(15);}}
-
 }

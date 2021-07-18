@@ -1,4 +1,16 @@
 @charset "utf-8";
+@function vw-calc1920($px) {
+    @return #{$px / (1920 / 100)}vw;
+}
+@function vw-calc1680($px) {
+  @return #{$px / (1680 / 100)}vw;
+}
+@function vw-calc1440($px) {
+  @return #{$px / (1440 / 100)}vw;
+}
+@function vw-calc1024($px) {
+  @return #{$px / (1024 / 100)}vw;
+}
 @function vw-calc414($px) {
     @return #{$px / (414 / 100)}vw;
 }

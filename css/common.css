@@ -109,7 +109,7 @@ header, nav, section, footer {
     font-size: 12px; }
   .btn_more.white {
     width: 146px;
-    height: 52px;
+    height: 12%;
     border-radius: 26px;
     background: #fff;
     font-size: 20px; }
@@ -240,5 +240,12 @@ body {
     transform: rotate(-180deg); }
   100% {
     transform: rotate(0deg); } }
+@media screen and (max-width: 1440px) {
+  .btn_more.white {
+    width: 146px;
+    height: 12%;
+    border-radius: 26px;
+    background: #fff;
+    font-size: 17px; } }
 
 /*# sourceMappingURL=common.css.map */

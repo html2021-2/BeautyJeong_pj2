@@ -11,7 +11,7 @@ $(document).ready(function () {
     $(this).next().stop().slideDown('fast');
 
   });
-  //닫기에서 focusout은 사용하면 안됩니다. 버튼태그에서 포커스가 나가는 순간 바로 16라인이 실행되거든요... 그래서 19라인에서 추가로 포커스는 제어 합니다
+  //언어선택 - 닫기
   $('#pcHeader .lang').on('mouseleave', function () {
     $(this).children('ul').stop().slideUp('fast');
   });
@@ -21,7 +21,6 @@ $(document).ready(function () {
       if (!$('#pcHeader .lang button, #pcHeader .lang a').is(':focus')) $('#pcHeader .lang').trigger('mouseleave');
     }, 10);
   });
-
 
   //pcGnb
   //뎁스1 li에 마우스, 키보드 진입
@@ -115,12 +114,12 @@ $(document).ready(function () {
   //top슬라이딩으로 따라다니기
   let btnTop = $('#forTop .btn_top').css('top'); 
   btnTop = parseInt(btnTop);
-  if ($(window).width() > 768) {
+  if ($(window).width() > 1024) {
     $(window).on('scroll', function () {
       const scrollY = $(this).scrollTop();
       const toCnt2Hei = $('#container .cnt1').height() + $('.cnt2').height();
       console.log(toCnt2Hei);
-      const btnPos = btnTop + scrollY - toCnt2Hei;      
+      const btnPos = btnTop + scrollY - toCnt2Hei + 300;      
       if (scrollY > toCnt2Hei) $('#forTop .btn_top').css({top: btnPos});
       //else if(($(window).width() >= 768) && (scrollY > $('#container .cnt1').height())) $('#forTop .btn_top').css({top: btnPos});
       //else $('#forTop .btn_top').css({top: btnPos + 10});
@@ -128,7 +127,7 @@ $(document).ready(function () {
   } 
 
   //모바일 top버튼 위치
-  if ($(window).width() <= 768) {
+  if ($(window).width() <= 1024) {
     const cntTreeHei = $('#cnt3').height();
     const cntFourHei = $('#cnt4').height();
     const totalHei = cntTreeHei + cntFourHei;
