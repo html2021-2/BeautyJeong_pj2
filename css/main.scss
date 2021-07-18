@@ -6,6 +6,7 @@
     h2{font-family: Roboto;font-weight: 500;color: $dBlue;}    
 }
 
+// 1440, 1280에서 슬라이더 페이지네이션 위치 수정
 .cnt1{
     height: 100vh;
     .txtwrap{
@@ -141,7 +142,6 @@
             .blueTxt{color: $dBlue;font-size: 24px;}
             .nameTxt{color: $lGray;font-size: 18px;margin: 17px 0;line-height: 1.2;}
             .price{color: $dGray;font-size: 18px;line-height: 1.2;}
-            .btn_more{position: absolute;visibility: hidden;}
         }
         .photo1{
             grid-row: 1 / 4;grid-column: 1;
