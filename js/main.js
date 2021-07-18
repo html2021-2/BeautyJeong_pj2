@@ -62,9 +62,9 @@ $(document).ready(function () {
       // 창크기에 변화가 생길때 언제나 동적생성 하지 않고 모바일에서 pc로 바뀌는 순간에 한번만 동작
       if (isMobile) {
         // 처음 열린 창이 모바일이라면 이미지가 변경되었을 것이고 그럼 창크기를 변화해서 pc가 되면 다시 이미지를 pc로 변경해 주어야죠
-        $('#cnt2 .photo2 img').attr({src: "images/furnishing/furnish2.jpg", alt: "야외피크닉을 즐길 수 있는 야외마당"});
-        $('#cnt2 .photo3 img').attr({src: "images/furnishing/furnish3.jpg", alt: "바람에 날리는 커텐과 식물들이 있는 방"});
-        $('#cnt2 .photo4 img').attr({src: "images/furnishing/furnish4.jpg", alt: "화이트 톤의 어린이 방"});
+        $('#cnt2 .photo2 img').attr({src: "images/furnishing/p-furnish2.jpg", alt: "야외피크닉을 즐길 수 있는 야외마당"});
+        $('#cnt2 .photo3 img').attr({src: "images/furnishing/p-furnish3.jpg", alt: "바람에 날리는 커텐과 식물들이 있는 방"});
+        $('#cnt2 .photo4 img').attr({src: "images/furnishing/p-furnish4.jpg", alt: "화이트 톤의 어린이 방"});
 
         $('#cnt2 .photo .btn_more').remove();
       }
